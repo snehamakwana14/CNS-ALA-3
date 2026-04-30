@@ -2,12 +2,13 @@
 NAME:SNEHA MAKWANA ENROLLMENT:240905091021
 
 import hmac
+
 import hashlib
 
 # Shared secret key (must be same for sender & receiver)
 secret_key = b"my_secret_key"
 
-# ------------------ SENDER SIDE ------------------
+#  SENDER SIDE 
 print("🔹 SENDER SIDE")
 
 message = input("Enter message to send: ").encode()
@@ -17,7 +18,7 @@ mac = hmac.new(secret_key, message, hashlib.sha256).hexdigest()
 
 print("Generated MAC:", mac)
 
-# ------------------ RECEIVER SIDE ------------------
+#  RECEIVER SIDE 
 print("\n🔹 RECEIVER SIDE")
 
 received_message = message   # Simulating same message received
